@@ -1,7 +1,7 @@
 @function jpg($name) {
-    @return url('/assets/images/#{$name}.jpg');
+    @return url('/assets/images/backgrounds/#{$name}.jpg');
 }
 
 @function png($name) {
-    @return url('/assets/images/#{$name}.png');
+    @return url('/assets/images/bacgrounds/#{$name}.png');
 }
