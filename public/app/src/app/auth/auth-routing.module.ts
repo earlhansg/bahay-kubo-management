@@ -6,8 +6,8 @@ export const ROUTES: Routes = [
   {
     path: 'auth',
     children: [
-      { path: '', pathMatch: 'full', redirectTo: 'login' },
-      { path: 'login', loadChildren: './login-signup/login-signup.module#LoginSignUpModule' }
+      { path: '', pathMatch: 'full', redirectTo: 'home' },
+      { path: 'home', loadChildren: './home/home.module#HomeModule' }
     ]
   }
 ];
