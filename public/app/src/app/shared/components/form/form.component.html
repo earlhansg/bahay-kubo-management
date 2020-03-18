@@ -1,0 +1,16 @@
+<formly-form [form]="form"
+             [fields]="fields"
+             [model]="model">
+
+  <ng-content></ng-content>
+  <button type="submit"
+          color="primary"
+          mat-stroked-button
+          (click)="submitForm(model)"
+          [disabled]="form.invalid">{{ buttonLabel }}
+          <fa-icon [icon]="faCog" 
+                   size="lg" 
+                   [spin]="true"
+                   *ngIf="isLoading | async"></fa-icon>
+  </button>
+</formly-form>
