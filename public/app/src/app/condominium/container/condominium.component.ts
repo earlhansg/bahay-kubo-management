@@ -10,9 +10,9 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class CondominiumComponent {
   condos = [
-    { content: 'Sinkamas Legends', url: 'dashboard/1', backgroundImage: 'sinkamas'},
-    { content: 'Talong High', url: 'dashboard/2', backgroundImage: 'talong'},
-    { content: 'Sigarilyas Square', url: 'dashboard/3', backgroundImage: 'sigarilyas'}
+    { content: 'Sinkamas Legends', url: '../dashboard/1', backgroundImage: 'sinkamas'},
+    { content: 'Talong High', url: '../dashboard/2', backgroundImage: 'talong'},
+    { content: 'Sigarilyas Square', url: '../dashboard/3', backgroundImage: 'sigarilyas'}
   ];
 
   constructor(private sanitizer: DomSanitizer) {}
