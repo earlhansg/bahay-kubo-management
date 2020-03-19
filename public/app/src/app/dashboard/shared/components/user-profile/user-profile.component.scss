@@ -1,0 +1,29 @@
+.profile {
+    margin-top: 30px;
+    img {
+        width: 120px;
+        height: 115px;
+        border-radius: 50%;
+        background-color: palevioletred;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+    }
+    &__info {
+        margin-top: 20px;
+
+        small {
+            font-size: 13px;
+        }
+        small::before {
+            content: '';
+            display: inline-block;
+            margin-right: 8px;
+            margin-top: 10px;
+            width: 10px;
+            height: 10px;
+            -moz-border-radius: 7.5px;
+            -webkit-border-radius: 7.5px;
+            border-radius: 7.5px;
+            background-color: #1affa3;
+        }
+    }
+}
