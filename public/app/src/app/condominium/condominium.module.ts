@@ -3,12 +3,17 @@ import { NgModule } from '@angular/core';
 
 import { CondominiumRoutingModule } from './condominium-routing.module';
 
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { SharedModule } from '@app/shared/shared.module';
+
 import { CondominiumComponent } from './container/condominium.component';
 
 @NgModule({
   imports: [
     BrowserModule,
-    CondominiumRoutingModule
+    CondominiumRoutingModule,
+    FlexLayoutModule,
+    SharedModule
   ],
   declarations: [CondominiumComponent]
 })
