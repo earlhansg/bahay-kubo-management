@@ -1,0 +1,37 @@
+@import '../../../assets/styles/main';
+
+
+$start-breakpoint: 599px;
+
+.container {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: $white;
+}
+
+mat-sidenav { width: 300px; }
+mat-nav-list {
+    margin-top: 35px;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+.nav-list {
+    font-size: 14px !important;    
+    &:hover {
+        background-color: transparent !important;
+    }
+    a:hover {
+        color: #F06292;
+    }
+}
+
+.nav-icon {
+    margin-right: 5px;
+}
+
+.content-bg {
+    background-color: whitesmoke;
+}
