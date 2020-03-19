@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AuthModule } from '@app/auth/auth.module';
 import { CondominiumModule } from '@app/condominium/condominium.module';
+import { DashboardModule } from '@app/dashboard/dashboard.module';
 
 import { AppRoutingModule } from '@app/app-routing.module';
 import { AppComponent } from '@app/root/container/app.component';
@@ -20,7 +21,8 @@ import { SharedModule } from '@app/shared/shared.module';
     BrowserAnimationsModule,
     SharedModule,
     AuthModule,
-    CondominiumModule
+    CondominiumModule,
+    DashboardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
