@@ -1,1 +1,8 @@
-<h1>Condo Units</h1>
+<div class="condo" 
+     fxLayout.lt-md="column"
+     fxLayoutAlign="space-around center">
+        <button mat-raised-button 
+                *ngFor="let condo of condos"
+                [routerLink]="condo.url"
+                [style.background-image]="backgroundImage(condo.backgroundImage)"> {{ condo.content }}</button>
+</div>

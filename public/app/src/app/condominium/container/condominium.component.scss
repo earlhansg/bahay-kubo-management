@@ -1,0 +1,35 @@
+@import '../../../assets/styles/main';
+@import '../../../assets/styles/utils/functions';
+
+$start-breakpoint: 960px;
+$start-breakpoint-2: 500px;
+
+.condo {
+   height: 100vh;
+}
+
+button {
+   width: 25%;
+   height: 150px;
+   background-repeat:no-repeat;
+   background-size:100% 100%;
+
+   @include media($start-breakpoint) {
+      & {
+        width: 50%;
+      }
+    } 
+
+}
+
+.mat-raised-button {
+   color: white;
+   font-size: 14px;
+   font-weight: 600;
+
+   @include media($start-breakpoint-2) {
+      & {
+        font-size: 12px;
+      }
+    }
+}
