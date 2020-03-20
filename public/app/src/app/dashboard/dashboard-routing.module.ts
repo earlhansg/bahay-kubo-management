@@ -5,7 +5,20 @@ import { DashboardComponent } from './container/dashboard.component';
 
 
 const routes: Routes = [
-  { path: 'dashboard/:id', component: DashboardComponent }
+  {
+    path: 'dashboard/:name', component: DashboardComponent,
+    children: [
+      {
+        path: 'apartments/:id',
+        loadChildren: './apartments/apartments.module#ApartmentsModule'
+      },
+      {
+        path: '',
+        redirectTo: 'apartments/:id',
+        pathMatch: 'full'
+      }
+    ]
+  }
 ];
 
 @NgModule({
