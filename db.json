@@ -1,0 +1,188 @@
+{
+    "condo": [
+        { 
+            "condo_id": 1, 
+            "condo_name": "Sinkamas Legends", 
+            "condo_location": "Bonifacio global City", 
+            "condo_date_completed": "",
+            "condo_architect": ["Jason B", "Billy L"],
+            "condo_number_floors": 20,
+            "condo_number_floor_units": 8,
+            "condo_total_floor_units": 160
+        },
+        { 
+            "condo_id": 2, 
+            "condo_name": "Talong High", 
+            "condo_location": "Bonifacio global City", 
+            "condo_date_completed": "",
+            "condo_architect": ["Jack B", "Jill L"],
+            "condo_number_floors": 20,
+            "condo_number_floor_units": 8,
+            "condo_total_floor_units": 160
+        },
+        { 
+            "condo_id": 3, 
+            "condo_name": "Sigarilyas Square", 
+            "condo_location": "Bonifacio global City", 
+            "condo_date_completed": "",
+            "condo_architect": ["Kristy B", "Earl L"],
+            "condo_number_floors": 20,
+            "condo_number_floor_units": 8,
+            "condo_total_floor_units": 160
+        }
+    ],
+    "apartments": [
+        {
+            "apartmentId": 1,
+            "condoId": 1,
+            "apartmentUnitPrice": 100000,
+            "apartmentNumberRooms": 3,
+            "apartmentSquareMeters": 100,
+            "apartmentAvailable": false
+        },
+        {
+            "apartmentId": 2,
+            "condoId": 1,
+            "apartmentUnitPrice": 100000,
+            "apartmentNumberRooms": 3,
+            "apartmentSquareMeters": 100,
+            "apartmentAvailable": true
+        },
+        {
+            "apartmentId": 5,
+            "condoId": 1,
+            "apartmentUnitPrice": 100000,
+            "apartmentNumberRooms": 4,
+            "apartmentSquareMeters": 90000,
+            "apartmentAvailable": false
+        },
+        {
+            "apartmentId": 3,
+            "condoId": 2,
+            "apartmentUnitPrice": 450000,
+            "apartmentNumberRooms": 5,
+            "apartmentSquareMeters": 300,
+            "apartmentAvailable": true
+        },
+        {
+            "apartmentId": 4,
+            "condoId": 3,
+            "apartmentUnitPrice": 800000,
+            "apartmentNumberRooms": 6,
+            "apartmentSquareMeters": 450,
+            "apartmentAvailable": true
+        }
+    ],
+    "tenants": [
+        {
+            "tenants_id": 1,
+            "tenants_name": "Lito Lapid",
+            "tenants_contact_number": 2223355,
+            "tenants_sex": "M",
+            "tenants_birthdate": "2014-01-01T23:28:56.782Z",
+            "tenants_address": "Cagayan de Oro"
+        },
+        {
+            "tenants_id": 2,
+            "tenants_name": "John Mark",
+            "contact_number": 3333331,
+            "sex": "M",
+            "birthdate": "2014-01-01T23:28:56.782Z",
+            "address": "Davao"
+        },
+        {
+            "tenants_id": 3,
+            "tenants_name": "Coco Martin",
+            "contact_number": 2223245,
+            "sex": "M",
+            "birthdate": "2014-01-01T23:28:56.782Z",
+            "address": "Manila"
+        }
+    ],
+    "payment_type": [
+        {
+            "payment_type_id": 1,
+            "payment_type_name": "cash"
+        },
+        {
+            "payment_type_id": 2,
+            "payment_type_name": "check"
+        },
+        {
+            "payment_type_id": 3,
+            "payment_type_name": "installment"
+        }
+    ],
+    "transaction_type": [
+        {
+            "transaction_type_id": 1,
+            "transaction_type_name": "rental"
+        },
+        {
+            "transaction_type_id": 2,
+            "transaction_type_name": "purchased"
+        }
+    ],
+    "transaction": [
+        {
+            "transaction_id": 1,
+            "transaction_amount": 100000,
+            "transaction_date": "2014-01-01T23:28:56.782Z",
+            "transaction_start": "2014-01-01T23:28:56.782Z",
+            "transaction_end": "2015-01-01T23:28:56.782Z",
+            "transaction_type_id": 1,
+            "transaction_type_name": "rental",
+            "payment_type_id": 2,
+            "payment_type_name": "check",
+            "tenants_id": 1,
+            "tenants_name": "Lito Lapid",
+            "tenants_contact_number": 2223355,
+            "tenants_sex": "M",
+            "tenants_birthdate": "2014-01-01T23:28:56.782Z",
+            "tenants_address": "Cagayan de Oro",
+            "condo_id": 1, 
+            "condo_name": "Sinkamas Legends", 
+            "condo_location": "Bonifacio global City", 
+            "condo_date_completed": "",
+            "condo_architect": ["Jason B", "Billy L"],
+            "condo_number_floors": 20,
+            "condo_number_floor_units": 8,
+            "condo_total_floor_units": 160,
+            "apartment_id": 1,
+            "apartment_unit_price": 100000,
+            "apartment_number_rooms": 3,
+            "apartment_square_meters": 100,
+            "apartment_available": false
+        },
+        {
+            "transaction_id": 2,
+            "transaction_amount": 100000,
+            "transaction_date": "2014-01-01T23:28:56.782Z",
+            "transaction_start": null,
+            "transaction_end": null,
+            "transaction_type_id": 2,
+            "transaction_type_name": "purchased",
+            "payment_type_id": 1,
+            "payment_type_name": "cash",
+            "tenants_id": 2,
+            "tenants_name": "John Mark",
+            "contact_number": 3333331,
+            "sex": "M",
+            "birthdate": "2014-01-01T23:28:56.782Z",
+            "address": "Davao",
+            "condo_id": 1, 
+            "condo_name": "Sinkamas Legends", 
+            "condo_location": "Bonifacio global City", 
+            "condo_date_completed": "",
+            "condo_architect": ["Jason B", "Billy L"],
+            "condo_number_floors": 20,
+            "condo_number_floor_units": 8,
+            "condo_total_floor_units": 160,
+            "apartment_id": 5,
+            "apartment_unit_price": 100000,
+            "apartment_number_rooms": 4,
+            "apartment_square_meters": 90000,
+            "apartment_available": false
+        }
+    ]
+}
