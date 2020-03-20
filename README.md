@@ -6,10 +6,10 @@ A system to track the condo buildings, the units within each building and the ow
 
 ````
  $ npm run install:all    - Installs all package.json from express & angular
- 
+ $ json-server --watch db.json - Runs mock db.json
+ Open another terminal
  $ npm run ng:start       - Runs angular at http://localhost:4200
- $ npm run node:start     - Runs express at http://localhost:3000
- $ npm run start          - Runs both angular and express
+ 
 ````
 
 
