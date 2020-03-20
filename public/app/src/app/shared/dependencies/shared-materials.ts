@@ -27,7 +27,8 @@ import {
     MatNativeDateModule,
     MatSlideToggleModule,
     MatSliderModule,
-    MatTableModule
+    MatTableModule,
+    MatSortModule
   } from '@angular/material';
 import {OverlayModule} from '@angular/cdk/overlay';
 import {ScrollingModule} from '@angular/cdk/scrolling';
@@ -63,5 +64,6 @@ export const materials = [
     MatNativeDateModule,
     MatSlideToggleModule,
     MatSliderModule,
-    MatTableModule
+    MatTableModule,
+    MatSortModule
 ];

@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild, ChangeDetectionStrategy } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { FormComponent } from '@app/shared/components/form/form.component';
 
@@ -14,7 +15,7 @@ export class LoginSignupComponent implements OnInit {
 
 tabs: Tab[] = tabs;
 
-constructor() { }
+constructor(private router: Router ) { }
 
 ngOnInit() {}
 
@@ -25,6 +26,7 @@ selectTab(index: number): void {
 onSubmittedForm(credentials): void {
   const { username, password } = credentials;
   const payload = { username, password };
+  this.router.navigateByUrl('condominium');
 }
 
 }

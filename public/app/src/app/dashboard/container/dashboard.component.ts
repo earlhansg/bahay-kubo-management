@@ -1,12 +1,17 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 
 /* Data */
-import { navs, Nav } from './dashboard.data';
-import { Subscription } from 'rxjs';
+import { Nav } from './dashboard.data';
+
+import { faUser, faBuilding } from '@fortawesome/free-solid-svg-icons';
 
 /* Services */
 import { BreakPointsService } from '@app/shared/services';
-import { ApartmentsService } from '../shared/services/apartments.service';
+
+import { Store } from '@app/store';
+
+import { Subscription } from 'rxjs';
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -14,15 +19,23 @@ import { ApartmentsService } from '../shared/services/apartments.service';
 })
 export class DashboardComponent implements OnInit, OnDestroy {
 
-  navs: Nav[] = navs;
-  private breakpointsSubcription$: Subscription;
+  navs: Nav[];
+  breakpointsSubcription$: Subscription;
   isSmallScreen: boolean;
+  condoId: number;
+  subcription: Subscription;
 
   constructor(
     private breakPointsService: BreakPointsService,
-    private apartmentsService: ApartmentsService ) { }
+    private store: Store) { }
 
   ngOnInit() {
+    this.store.select<number>('condoId')
+      .subscribe((id) => {
+        this.navs = [
+          { url: `apartments/${id}`, icon: faBuilding, content: 'Apartment' },
+          { url: 'tenants', icon: faUser, content: 'Tenants' }];
+      });
 
     this.breakpointsSubcription$ = this.breakPointsService
         .checkBreakPoints(`(max-width: 901px)`)
@@ -32,6 +45,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.breakpointsSubcription$.unsubscribe();
+    this.subcription.unsubscribe();
   }
 
   get sidenavMode() {

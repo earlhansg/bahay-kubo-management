@@ -1,6 +1,15 @@
 <div class="apartments">
     <div fxLayout="column" fxLayoutAlign="center center">
-        <h1>Earl</h1>
-        {{apartments$ | async}}
+
+        <ng-container *ngIf="apartments$ | async as apartments; else loading;">
+            <app-table-list [apartments]="apartments"></app-table-list>
+        </ng-container>
+
+        <ng-template #loading>
+            <div class="message">
+                <img src="assets/images/loading.svg">
+                Fetching Apartments...
+            </div>
+        </ng-template>
     </div>
 </div>

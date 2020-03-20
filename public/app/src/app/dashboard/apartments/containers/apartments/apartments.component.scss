@@ -1,5 +1,17 @@
 .apartments {
-    background-color: white;
-    margin: 10px 0 15px 0;
+    margin: 20px 0 15px 0;
     padding: 20px 13px 20px 13px;
+}
+
+.message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 30px;
+    font-size: 22px;
+    font-weight: 500;
+    img {
+      margin: 0 10px 0 0;
+    }
 }

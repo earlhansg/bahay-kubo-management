@@ -1,0 +1,49 @@
+<div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource">
+            <ng-container matColumnDef="apartmentId">
+            <th mat-header-cell *matHeaderCellDef> ID </th>
+            <td mat-cell *matCellDef="let element"> {{element.apartmentId}} </td>
+            </ng-container>
+        
+            <ng-container matColumnDef="condoId">
+            <th mat-header-cell *matHeaderCellDef> Condo ID </th>
+            <td mat-cell *matCellDef="let element"> {{element.condoId}} </td>
+            </ng-container>
+        
+            <ng-container matColumnDef="apartmentUnitPrice">
+            <th mat-header-cell *matHeaderCellDef> Unit Price </th>
+            <td mat-cell *matCellDef="let element"> {{element.apartmentUnitPrice}} </td>
+            </ng-container>
+        
+            <ng-container matColumnDef="apartmentNumberRooms">
+            <th mat-header-cell *matHeaderCellDef> Number of rooms </th>
+            <td mat-cell *matCellDef="let element"> {{element.apartmentNumberRooms}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="apartmentSquareMeters">
+            <th mat-header-cell *matHeaderCellDef> Square Meters </th>
+            <td mat-cell *matCellDef="let element"> {{element.apartmentSquareMeters}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="apartmentAvailable">
+            <th mat-header-cell *matHeaderCellDef> Availability </th>
+            <td mat-cell *matCellDef="let element">
+                <ng-container *ngIf="element.apartmentAvailable; else notAvailable">
+                    Available
+                </ng-container>
+                <ng-template #notAvailable>
+                    N/A
+                </ng-template>
+                
+            </td>
+            </ng-container>
+            
+        
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row 
+                class="example-element-row"
+                *matRowDef="let row; columns: displayedColumns;"
+                [routerLink]="viewList(row)"></tr>
+    </table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>

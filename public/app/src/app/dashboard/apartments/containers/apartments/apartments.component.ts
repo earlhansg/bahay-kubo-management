@@ -29,6 +29,7 @@ export class ApartmentsComponent implements OnInit, OnDestroy {
 
     this.subscription = this.route.params.subscribe(
       (params: Params) => {
+        this.store.set('condoId', params.id);
         this.apartmentsService.getApartments(params.id).subscribe();
     });
 

@@ -1,0 +1,30 @@
+@import '../../../../../assets//styles/main';
+
+
+$start-breakpoint: 920px;
+$start-breakpoint-2: 500px;
+
+table {
+    overflow-x: auto;
+    overflow-y: hidden;
+    width: 600px;
+
+    @include media($start-breakpoint) {
+        & {
+            width: 500px;
+        }
+    }
+    @include media($start-breakpoint-2) {
+        & {
+            width: 100%;
+        }
+    }  
+}
+ 
+th.mat-header-cell {
+    text-align: left;
+}
+
+tr:hover {
+    background: whitesmoke;
+}

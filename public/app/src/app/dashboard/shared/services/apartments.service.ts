@@ -22,7 +22,8 @@ export class ApartmentsService extends RestService {
 
  getApartments(id): Observable<Apartments[]> {
     return this.request(`${this.url}?condoId=${id}`, HttpMethodEnum.GET)
-            .pipe(tap(next => this.store.set('apartments', next)));
+            .pipe(
+                tap(next => this.store.set('apartments', next)));
  }
 
 }
