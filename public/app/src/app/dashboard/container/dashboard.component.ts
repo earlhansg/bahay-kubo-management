@@ -6,6 +6,7 @@ import { Subscription } from 'rxjs';
 
 /* Services */
 import { BreakPointsService } from '@app/shared/services';
+import { ApartmentsService } from '../shared/services/apartments.service';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -17,12 +18,16 @@ export class DashboardComponent implements OnInit, OnDestroy {
   private breakpointsSubcription$: Subscription;
   isSmallScreen: boolean;
 
-  constructor( private breakPointsService: BreakPointsService ) { }
+  constructor(
+    private breakPointsService: BreakPointsService,
+    private apartmentsService: ApartmentsService ) { }
 
   ngOnInit() {
+
     this.breakpointsSubcription$ = this.breakPointsService
         .checkBreakPoints(`(max-width: 901px)`)
         .subscribe((match: boolean) => this.isSmallScreen = match);
+
   }
 
   ngOnDestroy() {
