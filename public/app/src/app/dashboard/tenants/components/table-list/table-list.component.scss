@@ -1,0 +1,48 @@
+@import '../../../../../assets//styles/main';
+
+
+$start-breakpoint: 920px;
+$start-breakpoint-2: 500px;
+
+
+:host {
+    margin-top: 30px;
+}
+
+table {
+    overflow-x: auto;
+    overflow-y: hidden;
+    width: 650px;
+
+    @include media($start-breakpoint) {
+        & {
+            width: 500px;
+        }
+    }
+    @include media($start-breakpoint-2) {
+        & {
+            width: 100%;
+        }
+    }  
+}
+ 
+th.mat-header-cell {
+    text-align: left;
+}
+
+tr:hover {
+    background: whitesmoke;
+}
+
+.message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 30px;
+    font-size: 22px;
+    font-weight: 500;
+    img {
+      margin: 0 10px 0 0;
+    }
+}

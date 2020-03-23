@@ -1,0 +1,32 @@
+<div class="tenants">
+    <div class="tenants__title" fxLayout="row" fxLayoutAlign="start center">
+        <span>
+            <fa-icon class="nav-icon" [icon]="faUsers" size="lg"></fa-icon>
+            List of Tenants
+        </span>
+    </div>
+    <hr>
+
+    <div class="tenants__event" fxLayout="row" fxLayoutAlign="end none">
+        <button mat-raised-button color="accent" [routerLink]="['../new']" 
+        fxLayout="row" fxLayoutAlign="center center">
+            <fa-icon class="nav-icon" [icon]="faPlus" size="xs"></fa-icon>
+            <span>New Tenant</span> 
+        </button>
+    </div>
+
+    <div fxLayout="column" fxLayoutAlign="center center">
+
+        <ng-container *ngIf="tenants$ | async as tenants; else loading;">
+            <app-table-list [tenants]="tenants"></app-table-list>
+        </ng-container>
+
+        <ng-template #loading>
+            <div class="message">
+                <img src="assets/images/loading.svg">
+                Fetching Apartments...
+            </div>
+        </ng-template>
+
+    </div>
+</div>

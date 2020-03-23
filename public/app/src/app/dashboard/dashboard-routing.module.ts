@@ -16,6 +16,10 @@ const routes: Routes = [
         path: '',
         redirectTo: 'apartments/:id',
         pathMatch: 'full'
+      },
+      {
+        path: 'tenants',
+        loadChildren: './tenants/tenants.module#TenantsModule'
       }
     ]
   }

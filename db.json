@@ -73,7 +73,7 @@
             "apartmentAvailable": true
         }
     ],
-    "tenant": [
+    "tenants": [
         {
             "tenantId": 1,
             "tenantName": "Lito Lapid",

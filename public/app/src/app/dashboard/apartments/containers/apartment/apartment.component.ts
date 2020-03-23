@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { TenantService } from '@app/dashboard/shared/services/tenant.service';
+import { TenantsService } from '@app/dashboard/shared/services/tenants.service';
 import { ApartmentsService } from '@app/dashboard/shared/services/apartments.service';
 import { TransactionTypeService } from '@app/dashboard/shared/services/transactionType.service';
 import { PaymentTypeService } from '@app/dashboard/shared/services/payment.service';
@@ -38,7 +38,7 @@ export class ApartmentComponent implements OnInit, OnDestroy {
 
   constructor(
     private apartmentsService: ApartmentsService,
-    private tenantService: TenantService,
+    private tenantsService: TenantsService,
     private transactionType: TransactionTypeService,
     private paymentType: PaymentTypeService,
     private store: Store,
@@ -70,7 +70,7 @@ export class ApartmentComponent implements OnInit, OnDestroy {
 
   getData(): Observable<any> {
     const response1 = this.apartmentsService.getApartments(this.condoID);
-    const response2 = this.tenantService.getTenants();
+    const response2 = this.tenantsService.getTenants();
     const response3 = this.transactionType.getTransactionType();
     const response4 = this.paymentType.getPaymentType();
     return forkJoin([response1, response2, response3, response4]);

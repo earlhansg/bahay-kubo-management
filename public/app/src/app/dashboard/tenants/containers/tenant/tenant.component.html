@@ -1,0 +1,23 @@
+<div class="tenant">
+    <div class="tenant__title">
+        <span>
+            <fa-icon class="nav-icon" [icon]="faUser" size="lg"></fa-icon>
+            Register Tenant
+        </span>
+    </div>
+    <hr>
+    <ng-container 
+        *ngIf="tenant$ | async as tenant; else loading">
+        <app-tenant-form [tenant]="tenant[0]"
+                         (create)="addTenant($event)"
+                         (update)="updateTenant($event)"
+                         (remove)="removeTenant($event)"></app-tenant-form>
+    </ng-container>
+
+    <ng-template #loading>
+        <div class="message">
+            <img src="assets/images/loading.svg">
+            Fetching ...
+        </div>
+    </ng-template>
+</div>

@@ -1,9 +1,9 @@
 
 export class Tenant {
-    tenantsId: number;
-    tenantsName: string;
-    tenantsContactNumber: number;
-    tenantsSex: string;
-    tenantsBirthdate: Date;
-    tenantsAddress: string;
+    tenantId: number;
+    tenantName: string;
+    tenantContactNumber: number;
+    tenantSex: string;
+    tenantBirthdate: Date;
+    tenantAddress: string;
 }

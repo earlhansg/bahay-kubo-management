@@ -1,0 +1,90 @@
+<div class="tenant-form">
+
+    <form [formGroup]="form" fxLayout="column" fxLayoutAlign="center space-around">
+
+      <div class="form__tenants">
+        <mat-form-field>
+            <mat-label>Name</mat-label>
+            <input formControlName="tenantName" matInput>
+        </mat-form-field>
+      </div>
+  
+      <div class="form__contact">
+            <mat-form-field>
+                <mat-label>Contact Number</mat-label>
+                <input formControlName="tenantContactNumber" 
+                       type="number" max="11" matInput>
+            </mat-form-field>
+      </div>
+
+      <div class="form__gender">
+        <mat-form-field>
+           <mat-label>Gender</mat-label>
+            <mat-select formControlName="tenantSex">
+              <mat-option [value]="M">
+                Male
+              </mat-option>
+              <mat-option [value]="F">
+                Female
+              </mat-option>
+            </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div class="form__address">
+            <mat-form-field>
+                <mat-label>Address</mat-label>
+                <input formControlName="tenantAddress" matInput>
+            </mat-form-field>
+      </div>
+
+      <div class="form__date">
+        <mat-form-field>
+            <mat-label>Date of Birth</mat-label>
+            <input formControlName="tenantBirthdate" 
+                   matInput 
+                   [matDatepicker]="picker1">
+            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field>
+      </div>
+
+      <div class="btn" fxLayout="row">
+          <div fxFlex="90" class="btn__event" *ngIf="!toggled">
+            <button mat-raised-button  
+                    *ngIf="!exist" 
+                    (click)="submitForm()">Save</button>
+            <button mat-raised-button  
+                    *ngIf="exist" 
+                    (click)="UpdateTransaction()">Update</button>
+            <button mat-raised-button
+                    class="btn-cancel"
+                    [routerLink]="['../']">Cancel</button>
+          </div>
+        
+          <div class="btn__delete">
+              <div class="btn__delete-event" *ngIf="toggled">
+                  
+                  <p>Delete item?</p>
+
+                  <button mat-raised-button
+                    (click)="removeTrasaction()">
+                    Yes
+                  </button>
+        
+                  <button mat-raised-button
+                    class="btn-cancel"
+                    (click)="toggle()">
+                    No
+                  </button>
+              </div>
+              <button mat-raised-button  
+                      class="btn-delete"
+                      *ngIf="exist && !toggled"
+                      (click)="toggle()">Delete</button>
+          </div>
+      </div>
+
+    </form>
+  
+  </div>

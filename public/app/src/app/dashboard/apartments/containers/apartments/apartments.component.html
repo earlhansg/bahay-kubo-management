@@ -9,7 +9,7 @@
     <div fxLayout="column" fxLayoutAlign="center center">
 
         <ng-container *ngIf="apartments$ | async as apartments; else loading;">
-            <app-table-list [apartments]="apartments" *ngIf="apartments$ | async"></app-table-list>
+            <app-table-list [apartments]="apartments"></app-table-list>
         </ng-container>
 
         <ng-template #loading>

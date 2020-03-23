@@ -1,0 +1,24 @@
+:host {
+  width: 95%;
+}
+
+.tenant {
+  margin: 20px;
+  &__title {
+    font-weight: 600;
+    padding-bottom: 8px;
+  }
+}
+
+.message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 30px;
+    font-size: 22px;
+    font-weight: 500;
+    img {
+      margin: 0 10px 0 0;
+    }
+}

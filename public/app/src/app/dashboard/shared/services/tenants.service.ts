@@ -11,12 +11,16 @@ import { tap } from 'rxjs/operators';
 import { Store } from '@app/store';
 
 @Injectable({ providedIn: 'root' })
-export class TenantService extends RestService {
- url = '/tenant';
+export class TenantsService extends RestService {
+ url = '/tenants';
 
  constructor(private store: Store,
              http: HttpClient,
              @Inject('API_URL') protected baseUrl: string) { super(http, baseUrl); }
+
+getTenantsById(id): Observable<any[]> {
+    return this.request(`${this.url}?tenantId=${id}`, HttpMethodEnum.GET);
+ }
 
  getTenants(): Observable<any[]> {
     return this.request(this.url, HttpMethodEnum.GET)
