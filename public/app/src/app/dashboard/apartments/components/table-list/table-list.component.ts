@@ -1,9 +1,9 @@
-import { Component, ChangeDetectionStrategy, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input, ViewChild, OnChanges, SimpleChanges } from '@angular/core';
 import { MatTableDataSource } from '@angular/material';
 import { MatPaginator } from '@angular/material/paginator';
 
 
-import { Apartments } from '@app/dashboard/shared/models';
+import { Apartment } from '@app/dashboard/shared/models';
 import { Router } from '@angular/router';
 
 
@@ -13,22 +13,22 @@ import { Router } from '@angular/router';
   templateUrl: './table-list.component.html',
   styleUrls: ['./table-list.component.scss']
 })
-export class TableListComponent implements OnInit {
+export class TableListComponent implements OnChanges {
 
 
   displayedColumns = ['apartmentId', 'condoId', 'apartmentUnitPrice', 'apartmentNumberRooms',
   'apartmentSquareMeters', 'apartmentAvailable' ];
 
   @Input()
-  apartments: Apartments[];
+  apartments: Apartment[];
   dataSource = new MatTableDataSource();
 
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
 
   constructor(private router: Router ) {}
 
-  ngOnInit() {
-    this.dataSource = new MatTableDataSource<Apartments>(this.apartments);
+  ngOnChanges(changes: SimpleChanges) {
+    this.dataSource = new MatTableDataSource<Apartment>(this.apartments);
     this.dataSource.paginator = this.paginator;
   }
 

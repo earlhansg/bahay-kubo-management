@@ -6,12 +6,18 @@ import { pluck, distinctUntilChanged } from 'rxjs/operators';
 export interface State {
   apartments: any;
   condoId: number;
+  tenants: any;
+  transactionType: any;
+  paymentType: any;
   [key: string]: any;
 }
 
 const state: State = {
   apartments: undefined,
-  condoId: undefined
+  condoId: undefined,
+  tenants: undefined,
+  transactionType: undefined,
+  paymentType: undefined
 };
 
 @Injectable({ providedIn: 'root' })

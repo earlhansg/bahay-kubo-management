@@ -1,18 +1,21 @@
-<div class="mat-elevation-z8">
+<div class="mat-elevation-z8" *ngIf="dataSource; else loading">
+    
     <table mat-table [dataSource]="dataSource">
             <ng-container matColumnDef="apartmentId">
-            <th mat-header-cell *matHeaderCellDef> ID </th>
-            <td mat-cell *matCellDef="let element"> {{element.apartmentId}} </td>
+                <th mat-header-cell *matHeaderCellDef> ID </th>
+                <td mat-cell *matCellDef="let element"> {{element.apartmentId}} </td>
             </ng-container>
         
             <ng-container matColumnDef="condoId">
-            <th mat-header-cell *matHeaderCellDef> Condo ID </th>
-            <td mat-cell *matCellDef="let element"> {{element.condoId}} </td>
+                <th mat-header-cell *matHeaderCellDef> Condo ID </th>
+                <td mat-cell *matCellDef="let element"> {{element.condoId}} </td>
             </ng-container>
         
             <ng-container matColumnDef="apartmentUnitPrice">
-            <th mat-header-cell *matHeaderCellDef> Unit Price </th>
-            <td mat-cell *matCellDef="let element"> {{element.apartmentUnitPrice}} </td>
+                <th mat-header-cell *matHeaderCellDef> Unit Price </th>
+                <td mat-cell *matCellDef="let element"> 
+                    {{element.apartmentUnitPrice | currency:'PHP':'symbol-narrow':'4.2-2'}}
+                </td>
             </ng-container>
         
             <ng-container matColumnDef="apartmentNumberRooms">
@@ -47,3 +50,10 @@
     </table>
     <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
 </div>
+
+<ng-template #loading>
+    <div class="message" *ngIf="dataSource; else empty">
+        <img src="assets/images/loading.svg">
+            Fetching ...
+    </div>
+</ng-template>

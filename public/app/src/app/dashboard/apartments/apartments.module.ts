@@ -11,6 +11,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { ApartmentsComponent } from './containers/apartments/apartments.component';
 import { ApartmentComponent } from './containers/apartment/apartment.component';
 import { TableListComponent } from './components/table-list/table-list.component';
+import { TrasactionFormComponent } from './components/transaction-form/transaction-form.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { TableListComponent } from './components/table-list/table-list.component
   declarations: [
     ApartmentsComponent,
     ApartmentComponent,
-    TableListComponent
+    TableListComponent,
+    TrasactionFormComponent
   ]
 })
 export class ApartmentsModule {}

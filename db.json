@@ -51,7 +51,7 @@
         {
             "apartmentId": 5,
             "condoId": 1,
-            "apartmentUnitPrice": 100000,
+            "apartmentUnitPrice": 7777987,
             "apartmentNumberRooms": 4,
             "apartmentSquareMeters": 90000,
             "apartmentAvailable": false
@@ -73,116 +73,80 @@
             "apartmentAvailable": true
         }
     ],
-    "tenants": [
+    "tenant": [
         {
-            "tenants_id": 1,
-            "tenants_name": "Lito Lapid",
-            "tenants_contact_number": 2223355,
-            "tenants_sex": "M",
-            "tenants_birthdate": "2014-01-01T23:28:56.782Z",
-            "tenants_address": "Cagayan de Oro"
+            "tenantId": 1,
+            "tenantName": "Lito Lapid",
+            "tenantContactNumber": 2223355,
+            "tenantSex": "M",
+            "tenantBirthdate": "2014-01-01T23:28:56.782Z",
+            "tenantAddress": "Cagayan de Oro"
         },
         {
-            "tenants_id": 2,
-            "tenants_name": "John Mark",
-            "contact_number": 3333331,
-            "sex": "M",
-            "birthdate": "2014-01-01T23:28:56.782Z",
-            "address": "Davao"
+            "tenantId": 2,
+            "tenantName": "John Mark",
+            "tenantContactNumber": 3333331,
+            "tenantSex": "M",
+            "tenantBirthdate": "2014-01-01T23:28:56.782Z",
+            "tenantAddress": "Davao"
         },
         {
-            "tenants_id": 3,
-            "tenants_name": "Coco Martin",
-            "contact_number": 2223245,
-            "sex": "M",
-            "birthdate": "2014-01-01T23:28:56.782Z",
-            "address": "Manila"
+            "tenantId": 3,
+            "tenantName": "Coco Martin",
+            "tenantContactNumber": 2223245,
+            "tenantSex": "M",
+            "tenantBirthdate": "2014-01-01T23:28:56.782Z",
+            "tenantAddress": "Manila"
         }
     ],
-    "payment_type": [
+    "paymentType": [
         {
-            "payment_type_id": 1,
-            "payment_type_name": "cash"
+            "paymentTypeId": 1,
+            "paymentTypeName": "cash"
         },
         {
-            "payment_type_id": 2,
-            "payment_type_name": "check"
+            "paymentTypeId": 2,
+            "paymentTypeName": "check"
         },
         {
-            "payment_type_id": 3,
-            "payment_type_name": "installment"
+            "paymentTypeId": 3,
+            "paymentTypeName": "installment"
         }
     ],
-    "transaction_type": [
+    "transactionType": [
         {
-            "transaction_type_id": 1,
-            "transaction_type_name": "rental"
+            "transactionTypeId": 1,
+            "transactionTypeName": "rent"
         },
         {
-            "transaction_type_id": 2,
-            "transaction_type_name": "purchased"
+            "transactionTypeId": 2,
+            "transactionTypeName": "purchase"
         }
     ],
     "transaction": [
         {
-            "transaction_id": 1,
-            "transaction_amount": 100000,
-            "transaction_date": "2014-01-01T23:28:56.782Z",
-            "transaction_start": "2014-01-01T23:28:56.782Z",
-            "transaction_end": "2015-01-01T23:28:56.782Z",
-            "transaction_type_id": 1,
-            "transaction_type_name": "rental",
-            "payment_type_id": 2,
-            "payment_type_name": "check",
-            "tenants_id": 1,
-            "tenants_name": "Lito Lapid",
-            "tenants_contact_number": 2223355,
-            "tenants_sex": "M",
-            "tenants_birthdate": "2014-01-01T23:28:56.782Z",
-            "tenants_address": "Cagayan de Oro",
-            "condo_id": 1, 
-            "condo_name": "Sinkamas Legends", 
-            "condo_location": "Bonifacio global City", 
-            "condo_date_completed": "",
-            "condo_architect": ["Jason B", "Billy L"],
-            "condo_number_floors": 20,
-            "condo_number_floor_units": 8,
-            "condo_total_floor_units": 160,
-            "apartment_id": 1,
-            "apartment_unit_price": 100000,
-            "apartment_number_rooms": 3,
-            "apartment_square_meters": 100,
-            "apartment_available": false
+            "id": 1,
+            "transactionAmount": 100000,
+            "transactionDate": "2014-01-01T23:28:56.782Z",
+            "transactionStart": "2014-01-01T23:28:56.782Z",
+            "transactionEnd": "2015-01-01T23:28:56.782Z",
+            "transactionTypeId": 1,
+            "paymentTypeId": 2,
+            "tenantId": 1,
+            "condoId": 1,
+            "apartmentId": 1
         },
         {
-            "transaction_id": 2,
-            "transaction_amount": 100000,
-            "transaction_date": "2014-01-01T23:28:56.782Z",
-            "transaction_start": null,
-            "transaction_end": null,
-            "transaction_type_id": 2,
-            "transaction_type_name": "purchased",
-            "payment_type_id": 1,
-            "payment_type_name": "cash",
-            "tenants_id": 2,
-            "tenants_name": "John Mark",
-            "contact_number": 3333331,
-            "sex": "M",
-            "birthdate": "2014-01-01T23:28:56.782Z",
-            "address": "Davao",
-            "condo_id": 1, 
-            "condo_name": "Sinkamas Legends", 
-            "condo_location": "Bonifacio global City", 
-            "condo_date_completed": "",
-            "condo_architect": ["Jason B", "Billy L"],
-            "condo_number_floors": 20,
-            "condo_number_floor_units": 8,
-            "condo_total_floor_units": 160,
-            "apartment_id": 5,
-            "apartment_unit_price": 100000,
-            "apartment_number_rooms": 4,
-            "apartment_square_meters": 90000,
-            "apartment_available": false
+            "id": 2,
+            "transactionAmount": 7777987,
+            "transactionDate": "2014-01-01T23:28:56.782Z",
+            "transactionStart": "2014-01-01T23:28:56.782Z",
+            "transactionEnd": "2015-01-01T23:28:56.782Z",
+            "transactionTypeId": 2,
+            "paymentTypeId": 3,
+            "tenantId": 2,
+            "condoId": 1,
+            "apartmentId": 5
         }
     ]
 }

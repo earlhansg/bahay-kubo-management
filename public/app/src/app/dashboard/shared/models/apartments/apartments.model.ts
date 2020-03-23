@@ -1,5 +1,5 @@
 
-export class Apartments {
+export class Apartment {
     apartmentId: number;
     condoId: number;
     apartmentUnitPrice: number;

@@ -20,4 +20,9 @@ export abstract class RestService {
       );
   }
 
+  callback(data) {
+    console.log(data);
+    return data;
+  }
+
 }

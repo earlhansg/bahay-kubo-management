@@ -5,9 +5,12 @@ import { ApartmentsService } from '@app/dashboard/shared/services/apartments.ser
 
 import { Store } from '@app/store';
 
-import { Apartments } from '@app/dashboard/shared/models';
+import { Apartment } from '@app/dashboard/shared/models';
 
 import { Observable, Subscription } from 'rxjs';
+
+import { faBuilding } from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'app-apartments',
@@ -16,7 +19,8 @@ import { Observable, Subscription } from 'rxjs';
 })
 export class ApartmentsComponent implements OnInit, OnDestroy {
 
-  apartments$: Observable<Apartments[]>;
+  faBuilding = faBuilding;
+  apartments$: Observable<Apartment[]>;
   private subscription: Subscription;
 
   constructor(
@@ -25,7 +29,7 @@ export class ApartmentsComponent implements OnInit, OnDestroy {
     private route: ActivatedRoute) {}
 
   ngOnInit() {
-    this.apartments$ = this.store.select<Apartments[]>('apartments');
+    this.apartments$ = this.store.select<Apartment[]>('apartments');
 
     this.subscription = this.route.params.subscribe(
       (params: Params) => {

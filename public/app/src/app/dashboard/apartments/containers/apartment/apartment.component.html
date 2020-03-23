@@ -1,1 +1,28 @@
-<h1>Earl</h1>
+<div class="apartment">
+    <div class="apartment__title">
+        <span>
+            <fa-icon class="nav-icon" [icon]="faHandshake" size="lg"></fa-icon>
+            Create Transaction
+        </span>
+    </div>
+    <hr>
+    <ng-container 
+        *ngIf="apartmentsList && tenantsList && transactionTypeList && paymentTypeList 
+        && apartment; else loading">
+        <app-transaction-form [apartments]="apartmentsList"
+                              [tenants]="tenantsList"
+                              [transactionType]="transactionTypeList"
+                              [paymentType]="paymentTypeList"
+                              [apartment]="apartment"
+                              (create)="addTransaction($event)"
+                              (update)="updateTransaction($event)"
+                              (remove)="removeTransaction($event)"></app-transaction-form>
+    </ng-container>
+
+    <ng-template #loading>
+        <div class="message">
+            <img src="assets/images/loading.svg">
+            Fetching ...
+        </div>
+    </ng-template>
+</div>

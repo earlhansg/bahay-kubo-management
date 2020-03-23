@@ -1,0 +1,112 @@
+<div class="transaction-form">
+
+    <div class="transaction-form__id" 
+         fxLayout="row" 
+         fxLayout.lt-md="column" fxLayoutAlign.lt-md="space-around center">
+      <mat-label fxFlex="80">
+          Aparment Number: {{ apartment.apartmentId }}
+      </mat-label>
+      <mat-label *ngIf="exist">Transaction ID: {{ id }}</mat-label>
+    </div>
+
+    <form [formGroup]="form" fxLayout="column" fxLayoutAlign="center space-around">
+
+      <div class="form__tenants">
+        <mat-form-field>
+            <mat-label>Tenant</mat-label>
+            <mat-select formControlName="tenantId">
+              <mat-option *ngFor="let tenant of tenants" [value]="tenant.tenantId">
+                {{tenant.tenantName}}
+              </mat-option>
+            </mat-select>
+        </mat-form-field>
+      </div>
+  
+      <div class="form__transaction">
+        <mat-form-field>
+            <mat-label>Transaction Type</mat-label>
+            <mat-select formControlName="transactionTypeId">
+              <mat-option *ngFor="let transaction of transactionType" [value]="transaction.transactionTypeId">
+                {{transaction.transactionTypeId}}
+              </mat-option>
+            </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div class="form__payment_type_name">
+        <mat-form-field>
+            <mat-label>Payment Type</mat-label>
+            <mat-select formControlName="paymentTypeId">
+              <mat-option *ngFor="let payment of paymentType" [value]="payment.paymentTypeId">
+                {{payment.paymentTypeId}}
+              </mat-option>
+            </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div class="form__amount">
+          <mat-form-field>
+              <mat-label>Amount</mat-label>
+              <input matInput formControlName="transactionAmount" type="number">
+          </mat-form-field>
+      </div>
+
+      <div class="form__start" *ngIf="isRent | async">
+        <mat-form-field>
+            <mat-label>Start Date</mat-label>
+            <input formControlName="transactionStart" 
+                   matInput 
+                   [matDatepicker]="picker1">
+            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field>
+      </div>
+
+      <div class="form__end" *ngIf="isRent | async">
+        <mat-form-field>
+            <mat-label>End Date</mat-label>
+            <input formControlName="transactionEnd" matInput [matDatepicker]="picker2">
+            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2></mat-datepicker>
+        </mat-form-field>
+      </div>
+
+      <div class="btn" fxLayout="row">
+          <div fxFlex="90" class="btn__event" *ngIf="!toggled">
+            <button mat-raised-button  
+                    *ngIf="!exist" 
+                    (click)="submitForm()">Save</button>
+            <button mat-raised-button  
+                    *ngIf="exist" 
+                    (click)="UpdateTransaction()">Update</button>
+            <button mat-raised-button
+                    class="btn-cancel"
+                    [routerLink]="['../']">Cancel</button>
+          </div>
+        
+          <div class="btn__delete">
+              <div class="btn__delete-event" *ngIf="toggled">
+                  
+                  <p>Delete item?</p>
+
+                  <button mat-raised-button
+                    (click)="removeTrasaction()">
+                    Yes
+                  </button>
+        
+                  <button mat-raised-button
+                    class="btn-cancel"
+                    (click)="toggle()">
+                    No
+                  </button>
+              </div>
+              <button mat-raised-button  
+                      class="btn-delete"
+                      *ngIf="exist && !toggled"
+                      (click)="toggle()">Delete</button>
+          </div>
+      </div>
+
+    </form>
+  
+  </div>

@@ -1,8 +1,15 @@
 <div class="apartments">
+    <div class="apartments__title" fxLayout="row" fxLayoutAlign="start center">
+        <span>
+            <fa-icon class="nav-icon" [icon]="faBuilding" size="lg"></fa-icon>
+            List Apartments
+        </span>
+    </div>
+    <hr>
     <div fxLayout="column" fxLayoutAlign="center center">
 
         <ng-container *ngIf="apartments$ | async as apartments; else loading;">
-            <app-table-list [apartments]="apartments"></app-table-list>
+            <app-table-list [apartments]="apartments" *ngIf="apartments$ | async"></app-table-list>
         </ng-container>
 
         <ng-template #loading>
