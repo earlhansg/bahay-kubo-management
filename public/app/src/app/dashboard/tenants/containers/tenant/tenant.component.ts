@@ -29,5 +29,9 @@ export class TenantComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {}
 
+  addTenant(event) {
+    console.log('dsdsadsa', event);
+    this.tenantsService.addTenant(event);
+  }
 
 }

@@ -5,6 +5,8 @@ import { RestService } from '@app/shared/services';
 
 import { HttpMethodEnum } from '@app/shared/enums';
 
+import { Tenant } from '../models';
+
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 
@@ -18,7 +20,7 @@ export class TenantsService extends RestService {
              http: HttpClient,
              @Inject('API_URL') protected baseUrl: string) { super(http, baseUrl); }
 
-getTenantsById(id): Observable<any[]> {
+ getTenantsById(id): Observable<any[]> {
     return this.request(`${this.url}?tenantId=${id}`, HttpMethodEnum.GET);
  }
 
@@ -26,6 +28,10 @@ getTenantsById(id): Observable<any[]> {
     return this.request(this.url, HttpMethodEnum.GET)
             .pipe(
                 tap(next => this.store.set('tenants', next)));
+ }
+
+ addTenant(body: Tenant): Observable<Tenant> {
+    return this.request(this.url, HttpMethodEnum.POST, body);
  }
 
 }

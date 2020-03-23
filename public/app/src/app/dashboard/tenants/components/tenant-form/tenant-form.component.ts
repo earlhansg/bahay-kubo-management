@@ -46,9 +46,7 @@ export class TenantFormComponent implements OnInit, OnDestroy, OnChanges {
 
   constructor(private fb: FormBuilder) {}
 
-  ngOnInit() {
-    // this.ngOnChanges();
-  }
+  ngOnInit() {}
 
   ngOnChanges(changes: SimpleChanges) {
       console.log(this.tenant);
@@ -56,6 +54,9 @@ export class TenantFormComponent implements OnInit, OnDestroy, OnChanges {
           this.exist = true;
           const value = this.tenant;
           this.form.patchValue(value);
+      } else {
+        const tenantId = Math.round(Math.random() * 10);
+        this.form.patchValue({ tenantId });
       }
   }
 
@@ -64,6 +65,7 @@ export class TenantFormComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   submitForm() {
+    console.log(this.form.value);
     if (this.form.valid) {
       this.create.emit(this.form.value);
     }
